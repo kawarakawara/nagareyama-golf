@@ -1,13 +1,6 @@
 import { microcms } from "../libs/microcms";
+import type { EventItem } from "../types/items";
 
-type EventItem = {
-  id: string;
-  month: string;
-  name: string;
-  date: string;
-  venue: string;
-  type: unknown;
-};
 
 const MONTHS = ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"] as const;
 
@@ -50,6 +43,18 @@ const normalizeMonth = (m: unknown): string => {
   if (typeof m === "number" && m >= 1 && m <= 12) return `${m}月`;
   return "";
 };
+
+// 日付を YYYY.MM.DD に整形
+const formatDate = (iso?: string) => {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso; // 不正な場合はそのまま
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${yyyy}.${mm}.${dd}`;
+};
+
 
 
 export default async function EventsSection() {
@@ -133,7 +138,7 @@ export default async function EventsSection() {
                           <div className="space-y-1 text-sm text-gray-600">
                             <div className="flex items-center gap-2">
                               <i className="ri-calendar-line text-green-600" />
-                              <span>{ev.date}</span>
+                              <span>{formatDate(ev.date)}</span>
                             </div>
                             <div className="flex items-center gap-2">
                               <i className="ri-map-pin-line text-green-600" />

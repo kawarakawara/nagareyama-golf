@@ -3,7 +3,7 @@
 
 export default function GreetingSection() {
   return (
-    <section id="greeting" className="py-16 relative overflow-hidden bg-green-50">
+    <section id="greeting" className="py-16 relative overflow-hidden bg-green-50  border-b border-gray-200">
       {/* 左側のゴルフ画像 */}
 
 
@@ -31,8 +31,8 @@ export default function GreetingSection() {
                   <p className="text-green-800 font-semibold text-lg">
                     流山市アマチュアゴルフ協会
                   </p>
-                  <p className="text-green-700 font-medium">
-                    キャプテン 齋藤浩継 
+                  <p className="text-green-700 font-medium text-center">
+                        齋藤浩継
                   </p>
                 </div>
               </div>

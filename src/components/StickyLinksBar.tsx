@@ -12,7 +12,7 @@ const LINKS = [
 
 export default function StickyLinksBar() {
     return (
-    <div className="py-3 my-3 backdrop-blur-md bg-gray/40 rounded-full">
+    <div className="py-3 my-3 backdrop-blur-md bg-white/40 rounded-full">
         <nav className="justify-self-center whitespace-nowrap px-8">
             {LINKS.filter((l) => l.id !== "top").map((l) => (
             <a

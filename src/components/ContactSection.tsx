@@ -37,7 +37,7 @@ export default function ContactSection() {
         formBody.append(key, value);
       });
 
-      const response = await fetch('https://readdy.ai/api/form/submit/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -86,7 +86,7 @@ export default function ContactSection() {
                 お問い合わせを受け付けました。ありがとうございます。
               </div>
             ) : (
-              <form id="contact" data-readdy-form onSubmit={handleSubmit} className="space-y-6">
+              <form id="contact" onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     お名前 *

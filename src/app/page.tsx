@@ -30,7 +30,7 @@ export default function Home() {
         </div>
 
         {/* 右: 空き or 追加メニュー */}
-        <div className="justify-self-end px-4 z-50">
+        <div className="justify-self-end px-4 z-50 backdrop-blur-md bg-white/40 rounded-full">
           <p className="font-bold">Email</p>
           <p>info@nagareyama-ama-golf.com</p>
         </div>

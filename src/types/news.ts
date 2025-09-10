@@ -7,10 +7,3 @@ export type News = {
   category?: string;  // "イベント" / "お知らせ" など
   publishedAt?: string;
 };
-
-export type NewsList = {
-    contents: News[];
-    totalCount: number;
-    offset: number;
-    limit: number;
-};

@@ -1,5 +1,6 @@
 import { microcms } from "../libs/microcms";
 import type { News } from "../types/news";
+import Link from 'next/link';
 
 // microCMSの型が手元と違っても動くように最小限で受ける
 
@@ -91,11 +92,6 @@ export default async function NewsSection() {
                       </p>
                     )}
                   </div>
-
-                  {/* 矢印アイコン */}
-                  <div className="w-6 h-6 flex items-center justify-center">
-                    <i className="ri-arrow-right-line text-green-600" />
-                  </div>
                 </div>
               </div>
             );
@@ -104,9 +100,9 @@ export default async function NewsSection() {
 
         {/* もっと見る */}
         <div className="text-center mt-8">
-          <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors whitespace-nowrap cursor-pointer">
+          <Link href="/news" className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors whitespace-nowrap cursor-pointer inline-block">
             過去のお知らせを見る
-          </button>
+          </Link>
         </div>
       </div>
     </section>
