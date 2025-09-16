@@ -70,11 +70,6 @@ export default function Footer() {
                 <i className="ri-phone-line text-green-300"></i>
                 <span className="text-green-100 text-sm"></span>
               </div>
-              <div className="flex items-start gap-2">
-                <i className="ri-map-pin-line text-green-300 mt-1"></i>
-                <span className="text-green-100 text-sm">
-                </span>
-              </div>
             </div>
           </div>
         </div>
@@ -82,11 +77,12 @@ export default function Footer() {
           <h4 className="text-lg font-semibold mb-4">関連団体</h4>
           <ul className="flex flex-wrap gap-4 text-sm">
             <li><a href="https://www.jga.or.jp/" target="_blank" className="hover:underline">JGA日本ゴルフ協会</a></li>
-            <li><a href="..." target="_blank" className="hover:underline">関東ゴルフ連盟</a></li>
-            <li><a href="..." target="_blank" className="hover:underline">千葉県アマチュアゴルフ協会</a></li>
-            <li><a href="..." target="_blank" className="hover:underline">初石サンシャインゴルフ</a></li>
-            <li><a href="..." target="_blank" className="hover:underline">流山ゴルフセンター</a></li>
-            <li><a href="..." target="_blank" className="hover:underline">ロッキースタジアム</a></li>
+            <li><a href="https://www.kga.gr.jp/" target="_blank" className="hover:underline">関東ゴルフ連盟</a></li>
+            <li><a href="https://chiba-amagolf.jp/" target="_blank" className="hover:underline">千葉県アマチュアゴルフ協会</a></li>
+            <li><a href="http://www.pgs.or.jp/user/about/index.jsp" target="_blank" className="hover:underline">日本パブリックゴルフ協会</a></li>
+            <li><a href="http://3-shine.jp/" target="_blank" className="hover:underline">初石サンシャインゴルフ</a></li>
+            <li><a href="http://nagareyama-golf.co.jp/" target="_blank" className="hover:underline">流山ゴルフセンター</a></li>
+            <li><a href="https://rockystadium.jp/" target="_blank" className="hover:underline">ロッキースタジアム</a></li>
           </ul>
         </div>
 

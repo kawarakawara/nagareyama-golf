@@ -1,6 +1,5 @@
 
 
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import NewsDetail from './NewsDetail';
 import { microcms } from "../../libs/microcms";
@@ -13,7 +12,6 @@ export default async function NewsPage() {
   });
   return (
     <div className="min-h-screen">
-      <Header />
       <NewsDetail initialNews={contents} />
       <Footer />
     </div>

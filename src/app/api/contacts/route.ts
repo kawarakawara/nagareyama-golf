@@ -32,7 +32,7 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
         },
         body: JSON.stringify({
-        from: "no-reply@あなたの認証済みドメイン", // 例: no-reply@yourdomain.com
+        from: "nagareyama-ama-golf.com", // 例: no-reply@yourdomain.com
         to: process.env.MAIL_TO,
         subject: `お問い合わせ: ${subject}`,
         html,
