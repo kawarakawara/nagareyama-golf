@@ -32,7 +32,7 @@ export default function GreetingSection() {
                     流山市アマチュアゴルフ協会
                   </p>
                   <p className="text-green-700 font-medium text-center">
-                        齋藤浩継
+                        秋元真一
                   </p>
                 </div>
               </div>
