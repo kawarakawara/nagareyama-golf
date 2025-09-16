@@ -37,7 +37,7 @@ export default function ContactSection() {
         formBody.append(key, value);
       });
 
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -204,7 +204,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">電話番号</h4>
-                  <p className="text-gray-600">04-7123-4567</p>
+                  <p className="text-gray-600"></p>
                   <p className="text-sm text-gray-500">受付時間：平日 9:00-17:00</p>
                 </div>
               </div>
