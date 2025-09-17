@@ -49,11 +49,16 @@ const formatDate = (iso?: string) => {
   if (!iso) return "";
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso; // 不正な場合はそのまま
-  const yyyy = d.getFullYear();
-  const mm = String(d.getMonth() + 1).padStart(2, "0");
-  const dd = String(d.getDate()).padStart(2, "0");
+
+  // JST（UTC+9時間）に変換
+  const jst = new Date(d.getTime() + 9 * 60 * 60 * 1000);
+
+  const yyyy = jst.getFullYear();
+  const mm = String(jst.getMonth() + 1).padStart(2, "0");
+  const dd = String(jst.getDate()).padStart(2, "0");
   return `${yyyy}.${mm}.${dd}`;
 };
+
 
 
 
