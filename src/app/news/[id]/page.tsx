@@ -2,27 +2,29 @@
 import Footer from "../../../components/Footer";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image"; // ★追加
 import { microcms } from "../../../libs/microcms";
 import type { News } from "../../../types/news";
 
-// SSG 用（output: 'export' の場合は必須）
+// SSG 用
 export async function generateStaticParams(): Promise<Array<{ id: string }>> {
   const { contents } = await microcms.get<{ contents: News[] }>({
     endpoint: "news",
     queries: { limit: 100 },
+    customRequestInit: { next: { revalidate: 60 } },
   });
   return (contents ?? []).map(({ id }) => ({ id }));
 }
 
-// ISR（任意）
+// ISR
 export const revalidate = 60;
 
 export default async function NewsDetailPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  const { id } = await params;
+  const { id } = params;
 
   const article = await microcms
     .get<News>({ endpoint: "news", contentId: id })
@@ -32,6 +34,7 @@ export default async function NewsDetailPage({
 
   return (
     <div>
+      {/* ヘッダー部分 */}
       <div
         className="relative h-64 bg-cover bg-center"
         style={{ backgroundImage: `url('/mk-s-WHf1wtNMMLU-unsplash.jpg')` }}
@@ -45,6 +48,7 @@ export default async function NewsDetailPage({
         </div>
       </div>
 
+      {/* 本文 */}
       <div className="max-w-3xl mx-auto px-6 py-12">
         <div className="mb-8">
           <Link
@@ -61,7 +65,21 @@ export default async function NewsDetailPage({
           {(article.date ?? article.publishedAt)?.slice(0, 10)}
         </p>
 
-        {/* microCMSのリッチテキストをそのまま描画 */}
+        {/* ★ 画像を追加 */}
+        {article.image?.url && (
+          <div className="mb-6">
+            <Image
+              src={article.image.url}
+              alt={article.title}
+              width={article.image.width || 800}
+              height={article.image.height || 450}
+              className="rounded-lg object-cover w-full h-auto"
+              priority
+            />
+          </div>
+        )}
+
+        {/* 本文 (リッチテキスト) */}
         <article
           className="prose max-w-none"
           dangerouslySetInnerHTML={{ __html: article.body ?? "" }}

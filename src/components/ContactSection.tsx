@@ -198,37 +198,6 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                  <i className="ri-phone-line text-white text-xl"></i>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                  <i className="ri-map-pin-line text-white text-xl"></i>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">事務局所在地</h4>
-                  <p className="text-gray-600">
-                    〒270-0176<br />
-                    千葉県流山市加1-16-2<br />
-                    流山市生涯学習センター内
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                  <i className="ri-time-line text-white text-xl"></i>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">事務局開放時間</h4>
-                  <p className="text-gray-600">
-                    毎週土曜日 13:00-16:00<br />
-                    <span className="text-sm text-gray-500">（祝日・年末年始を除く）</span>
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

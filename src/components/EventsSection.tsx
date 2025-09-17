@@ -69,6 +69,7 @@ export default async function EventsSection() {
     const res = await microcms.get<{ contents: EventItem[] }>({
       endpoint: "events",
       queries: { limit: 100, orders: "order,month" },
+      customRequestInit: { next: { revalidate: 60 } },
     });
     events = res.contents ?? [];
 

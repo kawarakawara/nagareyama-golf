@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { News } from "../../types/news";
+import Image from "next/image";
+
 
 export default function NewsList({ initialNews }: { initialNews: News[] }) {
   const [selectedCategory, setSelectedCategory] = useState("すべて");
@@ -67,11 +69,23 @@ export default function NewsList({ initialNews }: { initialNews: News[] }) {
               href={`/news/${news.id}`} // ← ここで詳細ページへリンク
               className="block bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-green-500"
             >
-              <article className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="text-green-600 font-semibold text-sm">
-                    {news.date}
-                  </div>
+            <article className="flex gap-6 p-6 items-start">
+              {/* 画像（左側） */}
+              {news.image?.url && (
+                <div className="flex-shrink-0 w-40 h-28 relative">
+                  <Image
+                    src={`${news.image.url}?w=400&h=280&fit=crop`} // microCMSで小さめに取得
+                    alt={news.title}
+                    fill
+                    className="rounded-lg object-cover"
+                  />
+                </div>
+              )}
+
+              {/* テキスト（右側） */}
+              <div className="flex-1">
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="text-green-600 font-semibold text-sm">{news.date}</div>
                   <span
                     className={`px-3 py-1 rounded-full text-sm font-medium ${
                       news.category === "イベント"
@@ -86,14 +100,17 @@ export default function NewsList({ initialNews }: { initialNews: News[] }) {
                     {news.category}
                   </span>
                 </div>
-                <h2 className="text-xl font-semibold text-gray-900 mb-3">
+
+                <h2 className="text-lg font-semibold text-gray-900 mb-2">
                   {news.title}
                 </h2>
-                {/* 必要なら概要やサムネ表示もここに */}
-                <div className="w-6 h-6 ml-auto flex items-center justify-center text-green-600">
-                  <i className="ri-arrow-right-line" />
+
+                <div className="text-green-600 flex items-center text-sm">
+                  <i className="ri-arrow-right-line mr-1" />
+                  詳細を見る
                 </div>
-              </article>
+              </div>
+            </article>
             </Link>
           ))}
         </div>

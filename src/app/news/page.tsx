@@ -9,6 +9,7 @@ export default async function NewsPage() {
   const { contents } = await microcms.get<{ contents: News[] }>({
     endpoint: "news",
     queries: { limit: 50, orders: "-date,-publishedAt" },
+    customRequestInit: { next: { revalidate: 60 } },
   });
   return (
     <div className="min-h-screen">
