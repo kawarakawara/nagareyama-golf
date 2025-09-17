@@ -66,9 +66,10 @@ export default function Footer() {
                 <i className="ri-mail-line text-green-300"></i>
                 <span className="text-green-100 text-sm">info@nagareyama-ama-golf.com</span>
               </div>
-              <div className="flex items-center gap-2">
-                <i className="ri-phone-line text-green-300"></i>
-                <span className="text-green-100 text-sm"></span>
+              <div className="flex items-start gap-2">
+                <i className="ri-map-pin-line text-green-300 mt-1"></i>
+                <span className="text-green-100 text-sm">
+                </span>
               </div>
             </div>
           </div>
