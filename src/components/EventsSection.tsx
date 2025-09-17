@@ -174,9 +174,8 @@ export default async function EventsSection() {
                 申込方法
               </h4>
               <ul className="space-y-2 text-gray-700">
-                <li>• 開催1ヶ月前から受付開始</li>
-                <li>• 電話またはメールでお申し込み</li>
-                <li>• 参加費は当日会場にてお支払い</li>
+                <li>• 開催2ヶ月前から受付開始</li>
+                <li>• 流れや市内（初石サンシャインゴルフ,流山ゴルフセンター,ロッキースタジアム）にて</li>
               </ul>
             </div>
           </div>
