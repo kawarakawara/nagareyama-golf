@@ -45,6 +45,7 @@ export default async function NewsSection() {
   const { contents } = await microcms.get<{ contents: News[] }>({
     endpoint: "news",
     queries: { limit: 6, orders: "-date,-publishedAt" },
+    customRequestInit: { next: { revalidate: 60 } },
   });
 
   return (
