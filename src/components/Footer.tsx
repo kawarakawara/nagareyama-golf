@@ -64,7 +64,10 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <i className="ri-mail-line text-green-300"></i>
-                <span className="text-green-100 text-sm">info@nagareyama-ama-golf.com</span>
+                <a　href="mailto:info@nagareyama-ama-golf.com"
+                className="hover:underline">
+                  info@nagareyama-ama-golf.com
+                </a>
               </div>
             </div>
           </div>

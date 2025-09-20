@@ -78,22 +78,6 @@ export default function MembershipSection() {
             ※ 入会は<strong>行事・競技会参加時のみ</strong>受け付けています。事前のお手続きは行っておりません。詳細はお問い合わせください。
           </p>
         </div>
-
-        {/* CTA：行事へ/お問い合わせへ */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <a
-            href="#events"
-            className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold text-center"
-          >
-            年間行事を見る
-          </a>
-          <a
-            href="#contact"
-            className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-3 rounded-lg font-semibold text-center"
-          >
-            お問い合わせ
-          </a>
-        </div>
       </div>
     </section>
   );

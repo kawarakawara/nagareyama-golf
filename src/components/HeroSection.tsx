@@ -34,10 +34,7 @@ export default function HeroSection() {
               流山市ゴルフ界の発展と、交流の輪を広げることを目的としています
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-5">
-              <a href="#contact" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors whitespace-nowrap cursor-pointer">
-                お問い合わせ
-              </a>
-              <a href="#events" className="border-2 border-white text-white hover:bg-white hover:text-green-800 px-8 py-3 rounded-lg font-semibold transition-colors whitespace-nowrap cursor-pointer">
+              <a href="#events" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors whitespace-nowrap cursor-pointer">
                 年間行事を見る
               </a>
             </div>

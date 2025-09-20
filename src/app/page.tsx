@@ -30,9 +30,14 @@ export default function Home() {
         </div>
 
         {/* 右: 空き or 追加メニュー */}
-        <div className="justify-self-end px-4 z-50 backdrop-blur-md bg-white/40 rounded-full">
+        <div className="justify-self-end px-4 z-50 backdrop-blur-md bg-white/40 rounded-full cursor-pointer">
           <p className="font-bold">Email</p>
-          <p>info@nagareyama-ama-golf.com</p>
+          <a
+            href="mailto:info@nagareyama-ama-golf.com"
+            className="hover:underline"
+          >
+            info@nagareyama-ama-golf.com
+          </a>
         </div>
       </div>
       <HeroSection />
@@ -40,7 +45,6 @@ export default function Home() {
       <NewsSection />
       <MembershipSection />
       <EventsSection />
-      <ContactSection />
       <Footer />
     </div>
   );
